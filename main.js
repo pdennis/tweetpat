@@ -1,8 +1,8 @@
 const { app, BrowserWindow, BrowserView } = require('electron');
 
 const windowConfig = {
-    width: 2300,
-    height: 1200,
+    width: 2560,
+    height: 1600,
     webPreferences: { nodeIntegration: true }
 };
 
