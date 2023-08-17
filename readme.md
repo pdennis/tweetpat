@@ -10,7 +10,6 @@ electron app before, so I'm sure this is a mess.
 - View up to five Twitter URLs in adjacent columns.
 - Customize the URLs to display your preferred Twitter lists, profiles, or 
 other pages.
-- Responsive and adjustable column widths.
 
 ## Setup
 
