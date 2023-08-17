@@ -16,7 +16,7 @@ const sites = [
 
 const columnConfig = {
     offset: 88,
-    buffer: 50,
+    buffer: 20,
     extraWidth: 5
 };
 

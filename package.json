@@ -12,5 +12,8 @@
   "dependencies": {
     "electron": "^26.0.0",
     "split.js": "^1.6.5"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.1"
   }
 }
