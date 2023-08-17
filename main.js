@@ -1,7 +1,7 @@
 const { app, BrowserWindow, BrowserView } = require('electron');
 
 const windowConfig = {
-    width: 2000,
+    width: 2300,
     height: 1200,
     webPreferences: { nodeIntegration: true }
 };
@@ -17,7 +17,7 @@ const sites = [
 const columnConfig = {
     offset: 85,
     buffer: 15,
-    extraWidth: 30
+    extraWidth: 5
 };
 
 function createMainView() {
@@ -39,9 +39,12 @@ function createMainView() {
         });
         
         view.webContents.loadURL(site);
-        view.webContents.on('did-finish-load', () => {
-            view.webContents.executeJavaScript(`document.body.style.transform = 'translateX(-${columnConfig.offset}px)';`);
-        });
+view.webContents.on('did-finish-load', () => {
+    if (index !== 0) { // Only apply the transformation if it's not the leftmost column
+        view.webContents.executeJavaScript(`document.body.style.transform = 'translateX(-${columnConfig.offset}px)';`);
+    }
+});
+
     });
 
     mainWindow.on('closed', () => mainWindow = null);
