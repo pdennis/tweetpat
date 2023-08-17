@@ -7,23 +7,23 @@ const windowConfig = {
 };
 
 const sites = [
+    'https://twitter.com/notifications',
     'https://twitter.com/i/lists/168108242',
     'https://twitter.com/i/lists/132220062',
     'https://twitter.com/i/lists/1060242355968770048',
     'https://twitter.com/i/lists/1571131868820512769',
-    'https://twitter.com/notifications'
 ];
 
 const columnConfig = {
-    offset: 85,
-    buffer: 15,
+    offset: 88,
+    buffer: 50,
     extraWidth: 5
 };
 
 function createMainView() {
     const mainWindow = new BrowserWindow(windowConfig);
     const baseViewWidth = mainWindow.getBounds().width / sites.length;
-    const actualViewWidth = baseViewWidth + columnConfig.extraWidth;
+    const actualViewWidth = baseViewWidth + columnConfig.extraWidth + 70;
 
     sites.forEach((site, index) => {
         const view = new BrowserView();
