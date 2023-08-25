@@ -12,13 +12,13 @@ const sites = [
     'https://twitter.com/i/lists/132220062',
     'https://twitter.com/i/lists/1060242355968770048',
     'https://twitter.com/i/lists/1571131868820512769',
-    'https://indieweb.social/lists/646',
+    'https://indieweb.social',
     'https://indieweb.social/lists/645',
     'https://indieweb.social/lists/776',
 ];
 
 const columnConfig = {
-    offset: 60,
+    offset: 40,
     buffer: 10,
     extraWidth: 0,
     scaleFactor: 0.8 // downscale to 80% of original size
