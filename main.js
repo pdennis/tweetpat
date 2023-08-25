@@ -1,4 +1,4 @@
-const { app, BrowserWindow, BrowserView } = require('electron');
+const { app, BrowserWindow, BrowserView, shell } = require('electron');  // Include the shell module
 
 const windowConfig = {
     width: 2560,
@@ -50,18 +50,23 @@ function createMainView() {
         view.webContents.loadURL(site);
 
         view.webContents.on('did-finish-load', () => {
-            if (index !== 0) { // Only apply the transformation if it's not the leftmost column
+            if (index !== 0) {
                 view.webContents.executeJavaScript(`
                     document.body.style.transform = 'translateX(-${columnConfig.offset}px) scale(${columnConfig.scaleFactor})';
                 `);
             } else {
-                // Apply just the scaling for the leftmost column
                 view.webContents.executeJavaScript(`
                     document.body.style.transform = 'scale(${columnConfig.scaleFactor})';
-            `);
-        }
+                `);
+            }
+        });
+
+        // Intercept navigation requests and open them in the default system browser
+        view.webContents.on('will-navigate', (event, url) => {
+            event.preventDefault();  // Prevent the default navigation
+            shell.openExternal(url);  // Open the URL in the default system browser
+        });
     });
-}); 
 
     mainWindow.on('closed', () => mainWindow = null);
 }
@@ -75,4 +80,3 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', createMainView);
-
