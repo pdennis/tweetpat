@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src=".node_modules/split.js/dist/split.min.js"></script>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tweetpat</title>
+    <title>Wrapper</title>
     <style>
         body {
             margin: 0;
-            display: flex;
-        }
-
-        iframe {
-            border: none; /* remove borders */
-            flex: 1;
-        }
-
-        .gutter {
-            background-color: #333; 
-            cursor: col-resize;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
         }
     </style>
-    <script src="assets/js/split.min.js"></script>
 </head>
 <body>
-    <iframe class="resizable" src="https://site1.com"></iframe>
-    <iframe class="resizable" src="https://site2.com"></iframe>
-    <iframe class="resizable" src="https://site3.com"></iframe>
-    <iframe class="resizable" src="https://site4.com"></iframe>
-    <iframe class="resizable" src="https://site5.com"></iframe>
-
-    <script>
-        Split(document.querySelectorAll('.resizable'), {
-            sizes: [20, 20, 20, 20, 20],
-            minSize: 100,
-            gutterSize: 5,
-            cursor: 'col-resize'
-        });
-    </script>
+    <!-- Your content will be injected here -->
 </body>
 </html>
+
